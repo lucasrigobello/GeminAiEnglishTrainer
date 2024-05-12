@@ -12,6 +12,9 @@ if 'clicked' not in st.session_state:
 if 'recorded' not in st.session_state:
     st.session_state.recorded = False
 
+if 'get_track' not in st.session_state:
+    st.session_state.get_track = False
+
 def click_button():
     st.session_state.clicked = True
     
@@ -24,8 +27,12 @@ def callback():
         st.session_state.recorded = True
 
 def main():
-    fn.clean_files()
-    track = fn.new_track()
+    st.write('Start')
+    if st.session_state.get_track == False:
+        fn.clean_files()
+        track = fn.new_track()
+        st.session_state.get_track = True
+        st.session_state.track = track
 
     # inicio do App
     with st.sidebar:
@@ -43,8 +50,8 @@ def main():
 
     messages = st.container(height=500)
     with messages:
-        st.chat_message("user", avatar = icon).write(f'Escute o áudio a seguir [{track[:-4]}]')
-        st.audio(f'./audios/{track}', format="audio/mpeg", loop=False)
+        st.chat_message("user", avatar = icon).write(f'Escute o áudio a seguir [{st.session_state.track[:-4]}]')
+        st.audio(f'./audios/{st.session_state.track}', format="audio/mpeg", loop=False)
         
         st.button("Next", on_click = click_button)
 
@@ -73,7 +80,7 @@ def main():
             cont.write("- Sugestões de correções de pronúncia")
             cont.write("- Sugestões de correções gramaticais")
 
-            sample_file , recording, response1, chat = fn.gemini_context1(track)
+            sample_file , recording, response1, chat = fn.gemini_context1(st.session_state.track)
             cont1 = messages.chat_message("user", avatar = icon)
             cont1.markdown('### GeminAi English Trainer interpretation:')
             cont1.markdown(response1)
