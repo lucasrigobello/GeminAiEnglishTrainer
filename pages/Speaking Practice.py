@@ -27,7 +27,6 @@ def callback():
         st.session_state.recorded = True
 
 def main():
-    st.write('Start')
     if st.session_state.get_track == False:
         fn.clean_files()
         track = fn.new_track()
