@@ -1,6 +1,7 @@
 import gdown
 import random
 import os
+import time
 
 # Google Gemini packages
 import google.generativeai as genai
@@ -62,6 +63,7 @@ def gemini_context1(sample_selection):
     return sample_file, recording, response1.text, chat
 
 def gemini_context2(recording, chat):
+    time.sleep(10) 
     # Context to the Gemini Ai on examplained recording
     context = ['You are an English proficiency test evaluator. Based on the last conversation, you should analyse how well the ideas and information are explained in the following respose: ',
             recording]
@@ -72,6 +74,7 @@ def gemini_context2(recording, chat):
     return response2.text
 
 def gemini_context3(recording, chat):
+    time.sleep(10) 
     # Context to the Gemini Ai to give feedback on pronunciation
     context = ['You are still an English proficiency test evaluator, make some appointments and suggestions to improve pronunciation for the foreign english learner, based on the following respose: ',
             recording]
@@ -82,6 +85,7 @@ def gemini_context3(recording, chat):
     return response3.text
 
 def gemini_context4(recording, chat):
+    time.sleep(10) 
     # Context to the Gemini Ai to give feedback on grammar
     context = ['Now, you are still an English proficiency test evaluator, make grammar corretions on the following speech: ',
             recording]
