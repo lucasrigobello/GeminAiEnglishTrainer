@@ -10,12 +10,12 @@ import shutil
 GA_ID = "google_analytics"
 GA_SCRIPT = """
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0KFNHNZ16"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLH033LMBT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-V0KFNHNZ16');
+  gtag('config', 'G-BLH033LMBT');
 </script>
 """
 
@@ -36,17 +36,7 @@ def inject_ga():
 def main():
     inject_ga()
     fn.clean_files()
-    with st.sidebar:
-        # with open("./static/GeminAiEnglishTrainer.png", "rb") as f:
-        #     data = base64.b64encode(f.read()).decode("utf-8")
-        #     st.markdown(f"""
-        #             <div style="display:table;margin-top:-20%;margin-left:20%;">
-        #                 <img src="data:image/png;base64,{data}" width="100%" height="150">
-        #             </div>
-        #             """,
-        #             unsafe_allow_html=True,
-        #         )
-        
+    with st.sidebar:       
         st.image('./static/GeminAiEnglishTrainer.png', width = 120 )    
         st.header('GeminAi English Trainer')
 
