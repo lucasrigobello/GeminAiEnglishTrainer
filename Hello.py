@@ -36,7 +36,6 @@ def inject_ga():
 def main():
     inject_ga()
     fn.clean_files()
-    st.set_page_config(page_title="GeminAi English Trainer")
     with st.sidebar:       
         st.image('./static/GeminAiEnglishTrainer.png', width = 120 )    
         st.header('GeminAi English Trainer')
@@ -55,4 +54,5 @@ def main():
 
 
 if __name__ == "__main__":
+    st.set_page_config(page_title="GeminAi English Trainer")
     main()
