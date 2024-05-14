@@ -58,6 +58,7 @@ def callback():
 
 def main():
     inject_ga()
+    st.set_page_config(page_title="GeminAi English Trainer")
     if st.session_state.get_track == False:
         fn.clean_files()
         track = fn.new_track()
