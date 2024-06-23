@@ -41,16 +41,17 @@ def main():
         st.header('Teacher Colleague')
 
     st.title('Teacher Colleague')
-    st.write("""Welcome to our cutting-edge app designed to prepare you for English proficiency exams like never before.""")
+    st.write("""Welcome to our cutting-edge app designed to prepare you for English proficiency like never before.""")
     left_co, cent_co, last_co = st.columns(3)
     with cent_co:
         st.image('./static/GeminAiEnglishTrainer.png', width = 250 )    
-    st.write("""The Teacher Colleague App uses the generative artificial intelligence for teaching and learning English.
-             Harnessing the power of generative artificial intelligence, we offer a comprehensive platform for targeted training and 
-             exam readiness. Whether you're aiming for certifications or seeking to enhance your language skills, our app provides a 
-             tailored learning experience that adapts to your needs and accelerates your progress. With interactive exercises, personalized 
-             feedback, and simulated exam environments, we empower you to confidently master the language and achieve your proficiency goals.
-            Get ready to embark on a journey of language mastery like never before. Welcome to Teacher Colleague.""")
+    st.write("""The Teacher Colleague App uses the generative artificial intelligence for teaching and learning English. 
+             Employing the power of generative artificial intelligence, we offer a comprehensive platform for targeted 
+             language training. Whether you're aiming for certifications or seeking to enhance your language skills, 
+             our app provides a personalized learning experience that adapts to your needs and accelerates your progress. 
+             With interactive exercises, personalized feedback, and simulated exam environments, we empower you to 
+             confidently master the language and achieve your proficiency goals. Get ready to embark on a journey 
+             of language mastery like never before. Welcome to Teacher Colleague.""")
 
 
 if __name__ == "__main__":
