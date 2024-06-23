@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import pathlib
 import shutil
 
+
 GA_ID = "google_analytics"
 GA_SCRIPT = """
 <!-- Google tag (gtag.js) -->
