@@ -58,7 +58,7 @@ def callback():
 
 def main():
     inject_ga()
-    st.set_page_config(page_title="GeminAi English Trainer")
+    st.set_page_config(page_title="Teacher Colleague")
     if st.session_state.get_track == False:
         fn.clean_files()
         track = fn.new_track()
@@ -68,7 +68,7 @@ def main():
     # inicio do App
     with st.sidebar:
         st.image('./static/GeminAiEnglishTrainer.png', width = 120 )    
-        st.header('GeminAi English Trainer')
+        st.header('Teacher Colleague')
 
     messages = st.container(height=500)
     with messages:
@@ -96,30 +96,30 @@ def main():
             
         if st.session_state.recorded:
             cont = messages.chat_message("user", avatar = icon)
-            cont.markdown("### Feedback da GeminAi English Trainer")
-            cont.write("Observe as análises e susgestões providas pela GeminAi English Trainer")
+            cont.markdown("### Feedback da Teacher Colleague")
+            cont.write("Observe as análises e susgestões providas pela Teacher Colleague")
             cont.write("- Coerência com o texto original")
             cont.write("- Sugestões de correções de pronúncia")
             cont.write("- Sugestões de correções gramaticais")
 
             sample_file , recording, response1, chat = fn.gemini_context1(st.session_state.track)
             cont1 = messages.chat_message("user", avatar = icon)
-            cont1.markdown('### GeminAi English Trainer interpretation:')
+            cont1.markdown('### Teacher Colleague interpretation:')
             cont1.markdown(response1)
 
             response2 = fn.gemini_context2(recording, chat)
             cont2 = messages.chat_message("user", avatar = icon)
-            cont2.markdown('### GeminAi English Trainer response evaluation:')
+            cont2.markdown('### Teacher Colleague response evaluation:')
             cont2.markdown(response2)
 
             response3 = fn.gemini_context3(recording, chat)
             cont3 = messages.chat_message("user", avatar = icon)
-            cont3.markdown('### GeminAi English Trainer pronunciation suggestions:')
+            cont3.markdown('### Teacher Colleague pronunciation suggestions:')
             cont3.markdown(response3)
 
             response4 = fn.gemini_context4(recording, chat)
             cont4 = messages.chat_message("user", avatar = icon)
-            cont4.markdown('### GeminAi English Trainer grammar suggestions:')
+            cont4.markdown('### Teacher Colleague grammar suggestions:')
             cont4.markdown(response4)
 
     st.chat_input("Say something")
