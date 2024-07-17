@@ -123,7 +123,7 @@ def main():
             cont4.markdown('### Teacher Colleague grammar suggestions:')
             cont4.markdown(response4)
 
-    st.chat_input("Say something")
+    #st.chat_input("Say something")
 
 
 if __name__ == "__main__":
